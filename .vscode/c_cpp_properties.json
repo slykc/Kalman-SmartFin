@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Program Files/Arduino_Apollo3",
+                "C:/Program Files/Arduino_Apollo3/cores/arduino/mbed-bridge",
+                "C:/Program Files/Arduino_Apollo3/cores/arduino/mbed-bridge/**",
+                "C:/Program Files/Arduino_Apollo3/cores/mbed-os",
+                "C:/Program Files/Arduino_Apollo3/cores/mbed-os/**",
+                "C:/Program Files/Arduino_Apollo3/variants/LoRa_THING_PLUS_expLoRaBLE"
+            ],
+            "browse": {
+                "path":[
+                    "C:/Program Files/Arduino_Apollo3/**"]
+            },
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}
