@@ -2,7 +2,7 @@
 #ifndef __Fusion_h_
 #define __Fusion_h_
 
-#include <Arduino.h>
+#include <cstdint>
 
 class Fusion
 {
