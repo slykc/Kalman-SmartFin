@@ -3,13 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
-                "C:/Program Files/Arduino_Apollo3",
-                "C:/Program Files/Arduino_Apollo3/cores/arduino/mbed-bridge",
-                "C:/Program Files/Arduino_Apollo3/cores/arduino/mbed-bridge/**",
-                "C:/Program Files/Arduino_Apollo3/cores/mbed-os",
-                "C:/Program Files/Arduino_Apollo3/cores/mbed-os/**",
-                "C:/Program Files/Arduino_Apollo3/variants/LoRa_THING_PLUS_expLoRaBLE"
+                "${workspaceFolder}/**"
             ],
             "browse": {
                 "path":[

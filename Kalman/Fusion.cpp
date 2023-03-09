@@ -1,5 +1,5 @@
 #include "Fusion.h"
-
+#include <math.h>
 
 // kalman filter noise variances
 #define FQVA_9DOF_GBY_KALMAN 2E-6F // accelerometer noise g^2 so 1.4mg RMS
