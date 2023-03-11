@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-#define FIELD_LENGTH 11
+#define FIELD_LENGTH 15
 
 struct Measurements {
     // imu data
@@ -18,6 +18,12 @@ struct Measurements {
 
     // temperature
     float temperature;
+
+    // latitude and longtitude
+    float lat, lon;
+
+    // whether water
+    bool water;
 
     // constructor
     Measurements(std::vector<float> content); 

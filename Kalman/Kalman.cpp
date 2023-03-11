@@ -109,11 +109,15 @@ int main(int argc, char** argv) {
 
     // Kalman Filter
     Fusion kalmanFilter;
-    kalmanFilter.begin();
+    kalmanFilter.begin(MEASURE_FREQ);
     std::vector<float> x_acc_clean;
+    std::vector<float> x_acc_dirty;
     float* acc_x_filtered;
+    acc_x_filtered = new float;
     float* acc_y_filtered;
+    acc_y_filtered = new float;
     float* acc_z_filtered;
+    acc_z_filtered = new float;
     for (std::vector<Measurements>::iterator iter = readings.begin();
          iter != readings.end(); iter++) {
             kalmanFilter.update(iter->yaw, iter->pitch, iter->roll, 
@@ -122,7 +126,30 @@ int main(int argc, char** argv) {
             
             kalmanFilter.getLinearAcceleration(acc_x_filtered, acc_y_filtered, acc_z_filtered);
             x_acc_clean.push_back(*acc_x_filtered);
+            x_acc_dirty.push_back(iter->acc_x);
     }
+
+
+    std::fstream out_clean;
+    out_clean.open("clean_acc_x.txt", std::ios_base::out);
+
+    for (int i = 0; i < x_acc_clean.size(); i++)
+    {
+        out_clean << x_acc_clean[i] << std::endl;
+    }
+
+    out_clean.close();
+
+    std::fstream out_dirty;
+    out_dirty.open("dirty_acc_x.txt", std::ios_base::out);
+
+    for (int i = 0; i < x_acc_dirty.size(); i++)
+    {
+        out_dirty << x_acc_dirty[i] << std::endl;
+    }
+
+    out_clean.close();
+
     return 0;
 }
 

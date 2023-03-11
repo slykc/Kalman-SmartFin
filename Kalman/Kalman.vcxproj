@@ -147,6 +147,7 @@
     <ClCompile Include="Fusion.cpp" />
     <ClCompile Include="Kalman.cpp" />
     <ClCompile Include="Measurements.cpp" />
+    <ClCompile Include="matrix.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fusion.h" />
