@@ -9,6 +9,6 @@ x_acc of x_acc_fast_1m
 
 Potential Problems:
 - No magentometer measurements (can replace by 0?)
-- Wrong imu noise constants (need to checj datasheet)
+- Wrong imu noise constants (need to check datasheet)
 - Raw data already gave zero acceleration 
 - No mean val filter which is implemented in OpenMetBuoy
