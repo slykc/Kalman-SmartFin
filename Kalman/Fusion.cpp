@@ -2,9 +2,9 @@
 #include <math.h>
 
 // kalman filter noise variances
-#define FQVA_9DOF_GBY_KALMAN 2E-6F // accelerometer noise g^2 so 1.4mg RMS
+#define FQVA_9DOF_GBY_KALMAN 5.3E-6F // accelerometer noise g^2 so 1.4mg RMS
 #define FQVM_9DOF_GBY_KALMAN 0.1F  // magnetometer noise uT^2
-#define FQVG_9DOF_GBY_KALMAN 0.3F  // gyro noise (deg/s)^2
+#define FQVG_9DOF_GBY_KALMAN 0.0225F  // gyro noise (deg/s)^2
 #define FQWB_9DOF_GBY_KALMAN                                                   \
   1E-9F // gyro offset drift (deg/s)^2: 1E-9 implies 0.09deg/s max at 50Hz
 #define FQWA_9DOF_GBY_KALMAN                                                   \
