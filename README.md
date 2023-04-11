@@ -12,3 +12,6 @@ Potential Problems:
 - Wrong imu noise constants (need to check datasheet)
 - Raw data already gave zero acceleration 
 - No mean val filter which is implemented in OpenMetBuoy
+
+
+Updated param and testing data. -- Apr.11
