@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef __MEASUREMENT_H_
+#define __MEASUREMENT_H_
 #include <iostream>
 #include <vector>
 
@@ -28,3 +29,5 @@ struct Measurements {
     // constructor
     Measurements(std::vector<float> content); 
 };
+
+#endif

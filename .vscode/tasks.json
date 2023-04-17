@@ -8,7 +8,8 @@
                 "-fdiagnostics-color=always",
                 "--std=c++17",
                 "-g",
-                "${file}",
+                "${workspaceFolder}/Kalman/*.cpp",
+                "matrix.o",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
