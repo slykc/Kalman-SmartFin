@@ -6,8 +6,9 @@
                 "${workspaceFolder}/**"
             ],
             "browse": {
-                "path":[
-                    "C:/Program Files/Arduino_Apollo3/**"]
+                "path": [
+                    "C:/Program Files/Arduino_Apollo3/**"
+                ]
             },
             "defines": [
                 "_DEBUG",
@@ -20,6 +21,20 @@
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-msvc-x64",
             "configurationProvider": "ms-vscode.makefile-tools"
+        },
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-arm64"
         }
     ],
     "version": 4

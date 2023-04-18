@@ -1,4 +1,4 @@
-﻿// #include <boost/log.hpp>
+// #include <boost/log.hpp>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -24,7 +24,7 @@ public:
     };
 
     void pushNewElement(Measurements element) {
-        if (elementCtr = MEAN_GROUP_SIZE - 1) {
+        if (elementCtr == MEAN_GROUP_SIZE - 1) {
             entryCtr++;
             elementCtr = 0;
 
@@ -103,7 +103,9 @@ std::vector<Measurements> readData(std::string f) {
 int main(int argc, char** argv) {
 
     // read measurements from cvs, file path as an os arguement
-    std::string filename = "1m_xnegative_fast.csv";
+    std::string filename = "/Users/agarde/Documents/2023-02-23 Test 1.csv";
+    //"/Users/agarde/Desktop/Kalman-SmartFin/Kalman/1m_xnegative_fast.csv"
+    //"/Users/agarde/Documents/2023-02-23 Test 1.csv"
     std::vector<Measurements> readings = readData(filename);
     
 
@@ -121,17 +123,21 @@ int main(int argc, char** argv) {
     for (std::vector<Measurements>::iterator iter = readings.begin();
          iter != readings.end(); iter++) {
             kalmanFilter.update(iter->yaw, iter->pitch, iter->roll, 
-                                iter->acc_x, iter->acc_y, iter->acc_z,
-                                iter->mag_x, iter->acc_y, iter->mag_z);
+                                (iter->acc_x), (iter->acc_y), (iter->acc_z),
+                                0, 0, 0);
             
             kalmanFilter.getLinearAcceleration(acc_x_filtered, acc_y_filtered, acc_z_filtered);
+        
             x_acc_clean.push_back(*acc_x_filtered);
             x_acc_dirty.push_back(iter->acc_x);
+            std::cout << x_acc_clean.back() << "\n";
+            //std::cout << "DIRTY" << x_acc_dirty.back() << "\n";
     }
 
 
     std::fstream out_clean;
-    out_clean.open("clean_acc_x.txt", std::ios_base::out);
+    out_clean.open("clean_acc_x2.txt", std::ios_base::out);
+    std::cout << "DONE \n";
 
     for (int i = 0; i < x_acc_clean.size(); i++)
     {
@@ -141,7 +147,7 @@ int main(int argc, char** argv) {
     out_clean.close();
 
     std::fstream out_dirty;
-    out_dirty.open("dirty_acc_x.txt", std::ios_base::out);
+    out_dirty.open("dirty_acc_x2.txt", std::ios_base::out);
 
     for (int i = 0; i < x_acc_dirty.size(); i++)
     {
